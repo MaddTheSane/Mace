@@ -1,0 +1,28 @@
+Please read the README and MODIFY files before compiling Mace.
+
+This file contains information on getting Mace to compile on several
+platforms.
+
+-Linux x86-
+This is the primary development platform for Mace. The source code will
+compile on RedHat 5.2 and most other Linux and Unix variants using the
+included Makefiles.
+
+-Windows x86-
+The source code will compile with Symantec C++ 7.5 for Win32 as a Windows 95
+console application. It should also work with minimal or no porting on other
+Win32 compilers.
+
+-Alpha (and other 64-bit machines)-
+By default, the type U32 is defined as an unsigned long. On 64-bit machines
+a long is 64-bits, not 32. However, an int is 32-bits. You must edit
+"Globals.h" and replace the "long" in the U32 and S32 typedefs with "int". I
+believe that Alpha's are big endian machines so you should also review the
+section "Big Endian Machines". There may also be additional problems with
+Mace on 64-bit machines.
+
+-Big Endian Machines-
+Most non-x86 machines are big endian machines. Mace has problems with big
+endian machines. Please post any questions or solutions that you find to
+the Mace Forum. The Forum is available by e-mail and on the Mace Web Site
+http://forum.macehq.cx/

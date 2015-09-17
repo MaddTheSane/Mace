@@ -1,0 +1,33 @@
+Change Log for Mace PRE-RELEASE
+===============================
+
+Changes made to version MACE 041119
+-----------------------------------
+
+Cleaned up file structure and updated documentation. ~JE
+
+Changes since Mace 000324
+-------------------------
+-Modified emulation of the MOVE opcode
+
+Changes since Mace 991223
+-------------------------
+-Added incomplete warning to GetNamedResource
+-Added support for raw resource forks
+
+Changes since Mace 991130
+-------------------------
+-Mac application's resource fork filename is now specified in the command line
+-Better Linux (and other UNIX variant) support
+-Fixed a data type bug in LoadSeg that affected Linux port
+-Fixed redefinition of TRUE and FALSE errors/warnings
+-Fixed two exit bugs
+-Created "Compiling.txt" file
+-Fixed bugs affecting 64-bit machines (See Compiling.txt if you have one)
+
+Changes since Mace 991125
+-------------------------
+-Fixed a PC offset bug in LoadSeg
+-Ported to Linux
+-Changed license from GPL to LGPL (GNU Lesser General Public License)
+ (this will allow Mace to be used as a porting library)

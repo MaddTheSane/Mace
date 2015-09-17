@@ -1,0 +1,55 @@
+The Mace Project
+http://www.macehq.cx/
+=====================
+
+Introduction
+------------
+
+Mace is a Macintosh compatibility layer which will run Macintosh
+applications as though they were designed to run on the system that Mace
+is running on. See the Mace web site for a more complete description of Mace
+and it's project goals. This is a development release intended for developers
+who wish to add to the project and help get Mace running it's first Macintosh
+application. See the file "TODO" for a list of the high priority things to do.
+
+The 68000 CPU core is from the public domain "68000 Assembler/Simulator
+Version 1.0", written by the North Carolina State University's
+Electrical and Computer Engineering department. It has been heavily
+modified for use in Mace. I suspect that there are more than a few bugs
+lurking in it.
+
+Notes
+-----
+Once compiled, you can start Mace by typing  ./Mace <filename>
+Where <filename> is the file name of the Apple Double resource fork of the
+application which you want Mace to run. Both ARDI's Executor and HFS volumes
+mounted using the newer Linux kernels use a % character at the beginning of
+the file name to indicate the Apple Double resource fork. Files that do not
+have this character are the data forks. Apple Double data forks are simply
+raw data forks, but Apple Double resource forks are NOT raw resource forks.
+Mace will NOT work with raw resource forks at this time.
+
+We are emulating the A-Line (AKA Line A) traps for the MacOS and the
+Toolbox (the ROM). The trap dispatcher is in Toolbox.c. Read the legal
+information (at the end of this file) and the file "MODIFY" before you
+modify Mace in any way.
+
+See the file "Compiling.txt" for information on how to get Mace to compile
+on various platforms.
+
+
+LEGAL INFORMATION - READ THIS IMMEDIATELY!
+==========================================
+
+Mace is copyright 1999-2001 by Weston Pawlowski, 2002-2004 Eric Jones, and
+has been distributed under the terms of the GNU Lesser General Public License
+(LGPL). See the file named "LICENSE" for details. Other copyrights may also
+apply to Mace. The file "MODIFY" also applies to any and all modifications
+made to Mace.
+
+There are no warranties of any kind. The Mace project, it's members, and
+those associated with it are not responsible for anything. Use at your own
+risk. All rights reserved.
+
+All product names mentioned may be trademarks or registered trademarks
+of their respective owners.

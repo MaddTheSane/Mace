@@ -1,0 +1,18 @@
+To Do List
+============
+
+-Get a good LGPL compatible 680x0 CPU core that isn't full of bugs! UAE???
+
+-Figure out: should GetResource return a value in A0 or in the stack???
+-Fix: GetNamedResource
+-Fix: Return values in Toolbox emulation
+
+-Fix: LoadSeg
+  keep track of which code segments are already loaded, and their
+  locations. Maybe just have our Resource Manager keep track of
+  loaded resources...
+
+-Implement: Master Pointers!!! In Resources and Memory!
+
+-Implement: Support for Mac Binary files
+
