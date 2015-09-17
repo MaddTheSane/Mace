@@ -10,13 +10,18 @@
 #ifndef _MaceTypes
 #define _MaceTypes
 typedef unsigned char U8;
-typedef char S8;
+typedef signed char S8;
 typedef unsigned short U16;
 typedef signed short S16;
 
 //Note: on 64-bit machines, replace "long" with "int"
+#if __LP64__
+typedef unsigned int U32;
+typedef signed int S32;
+#else
 typedef unsigned long U32;
 typedef signed long S32;
+#endif
 #endif
 
 void App_Exit(void);
