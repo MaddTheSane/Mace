@@ -24,10 +24,7 @@ INCLUDES=-I/usr/local/include
 
 OBJS =	File.o Unix.o Main.o Mem.o Res.o Toolbox.o
 
-all: $(OBJS)
-	cd cpu && $(MAKE)
-	cd ..
-	$(CC) $(CFLAGS) $(OBJS) -o Mace -Lcpu -lCPU $(LDFLAGS) $(LIBRARIES) $(MATHLIB)
+all: Mace
 
 clean:
 	rm -f Mace
@@ -35,6 +32,13 @@ clean:
 	rm -f *.o
 	rm -f *~
 	cd cpu && $(MAKE) clean
+
+cpu/libCPU.a:
+	cd cpu && $(MAKE)
+	cd ..
+
+Mace: $(OBJS) cpu/libCPU.a
+	$(CC) $(CFLAGS) $(OBJS) -o Mace -Lcpu -lCPU $(LDFLAGS) $(LIBRARIES) $(MATHLIB)
 
 .m.o:
 	$(CC) $(INCLUDES) -c $(CFLAGS) $*.m
